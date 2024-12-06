@@ -112,34 +112,47 @@
                     <h1>Contacto</h1>
                     <label for="message">Mensaje</label>
                     <textarea id="message" name="message" placeholder="Message" required></textarea>
-    
+
                     <label for="reply_to">Tu Gmail</label>
                     <input type="email" id="reply_to" name="reply_to" placeholder="Your email" required>
-    
+
                     <button type="submit" class="submitBtn">Enviar</button>
                 </form>
             </div>
         </main>
-    
+
         <footer>
             <p>&copy; 2024 Daniel Segura.</p>
         </footer>
-    
+
         <script type="text/javascript">
             // Escucha el evento submit del formulario
+            document.querySelectorAll('dotlottie-player').forEach(player => {
+                player.addEventListener('click', () => {
+                    const filePath = player.getAttribute('data-file');
+                    // Inicia la descarga del archivo PDF
+                    const link = document.createElement('a');
+                    link.href = filePath;
+                    link.download = filePath.split('/').pop();
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                });
+            });
+
             document.getElementById('form').addEventListener('submit', function (event) {
                 event.preventDefault(); // Evita el envío predeterminado del formulario
-    
+
                 const message = document.getElementById('message').value;
                 const userEmail = document.getElementById('reply_to').value;
-    
+
                 const templateParams = {
                     from_name: userEmail,
                     to_name: "Daniel Segura",
                     message: message,
                     reply_to: userEmail
                 };
-    
+
                 // Enviar el correo con EmailJS
                 emailjs.send('default_service', 'template_szsdk5n', templateParams)
                     .then(function (response) {
@@ -162,17 +175,17 @@
             });
 
             function toggleAllSections() {
-  const sections = ['unitySeccion', 'phaserSeccion', 'hospitalSeccion'];
-  const button = document.querySelector('#trabajos-personales button');
+                const sections = ['unitySeccion', 'phaserSeccion', 'hospitalSeccion'];
+                const button = document.querySelector('#trabajos-personales button');
 
-  let seccionesOcultas = sections.every(id => document.getElementById(id).style.display === 'none');
+                let seccionesOcultas = sections.every(id => document.getElementById(id).style.display === 'none');
 
-  sections.forEach(id => {
-    document.getElementById(id).style.display = seccionesOcultas ? 'block' : 'none';
-  });
+                sections.forEach(id => {
+                    document.getElementById(id).style.display = seccionesOcultas ? 'block' : 'none';
+                });
 
-  button.textContent = seccionesOcultas ? 'Ocultar Trabajos' : 'Mostrar Trabajos';
-}
+                button.textContent = seccionesOcultas ? 'Ocultar Trabajos' : 'Mostrar Trabajos';
+            }
         </script>
     </body>
 
