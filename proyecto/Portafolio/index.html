@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daniel Segura - Portafolio</title>
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            emailjs.init('P096_JqVTS93jmwbI')
+        </script>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                <img src="logoDaniel.png" alt="Daniel Segura" id="logo">
+                <h1>Daniel Segura</h1>
+            </div>
+            <div class="Info">
+                <h2 class="Slogan">Proyectando luz hacia el futuro con excelencia</h2>
+            </div>
+            <div class="contactos">
+                <a href="https://wa.me/qr/F7J5UAK4WPLHC1" target="_blank">
+                    <img id="whatssap" src="whatssap.png" alt="WhatsApp">
+                </a>
+                <a href="https://github.com/Daniel344712" target="_blank">
+                    <img id="github" src="github.png" alt="Github">
+                </a>
+                <a href="https://www.linkedin.com/in/jos%C3%A9-daniel-segura-peraza-06b37b32a/">
+                    <img id="linkedin" src="linkeding.png" alt="">
+                </a>
+            </div>
+        </header>
+
+
+
+        <main>
+
+
+            <section id="portafolio">
+                <h1>Portafolio Profesional</h1>
+                <p class="textos"> Desarrollador de aplicaciones de escritorio y sitios web en .net utilizando las
+                    tecnologías C#, JavaScript, HTML, SQL.
+                </p>
+            </section>
+            <section id="portafolio">
+                <h1>Misión</h1>
+                <p class="textos">  Como profesional en ingeniería de software, mi misión al ser contratado es contribuir al éxito
+                    de la empresa mediante la creación de soluciones innovadoras y eficientes. Aporto
+                    experiencia en desarrollo full stack y en el uso de frameworks como .NET, y me desafío
+                    constantemente a desarrollar aplicaciones que impulsen el crecimiento y la competitividad
+                    de la organización
+                </p>
+            </section>
+            <section id="portafolio">
+                <h1>Visión</h1>
+                <p class="textos"> Producir nueva tecnología utilizando mi aprendizaje y pasión para crear proyectos
+                    sobresalientes.
+                </p>
+            </section>
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module">
+            </script>
+            <div class="pdf">
+                <div>
+                    <h1>Curriculum en Español</h1>
+                    <dotlottie-player src="https://lottie.host/05c8e629-a06a-4800-9a4d-a4a4a1fc5fdd/d0BLizMfkE.lottie"
+                        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay
+                        data-file="pdf/Espanol.pdf"></dotlottie-player>
+                </div>
+                <div>
+                    <h1>Curriculum en Ingles</h1>
+                    <dotlottie-player src="https://lottie.host/05c8e629-a06a-4800-9a4d-a4a4a1fc5fdd/d0BLizMfkE.lottie"
+                        background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay
+                        data-file="pdf/Ingles.pdf"></dotlottie-player>
+                </div>
+            </div>
+            <section id="trabajos-personales">
+                <h1 class="trabajoPersonales">Trabajos personales</h1>
+                <button class="btnMostrar" onclick="toggleAllSections()">Mostrar Trabajos</button>
+            </section>
+
+            <section id="unitySeccion" style="display: none;">
+                <h1 class="trabajoPersonales">Juego creado en Unity - C#</h1>
+                <img class="trabajos" src="granja.png" alt="">
+                <p class="textos">En este juego utilicé Unity para crear este juego simulando una granja donde el
+                    jugador tiene que alimentar a los animales.</p>
+            </section>
+
+            <section id="phaserSeccion" style="display: none;">
+                <h1 class="trabajoPersonales">Juego creado en Phaser - JS</h1>
+                <img class="trabajos" src="rpg.png" alt="">
+                <p class="textos">En este juego utilicé Phaser, que utiliza la tecnología JavaScript, para crear este
+                    juego RPG donde el usuario tenía que enfrentarse a varios niveles, aumentando la dificultad
+                    progresivamente.</p>
+            </section>
+
+            <section id="hospitalSeccion" style="display: none;">
+                <h1 class="trabajoPersonales">Pagina web creada con .Net</h1>
+                <img class="trabajos" src="hospital.jpg" alt="">
+                <p class="textos">En esta página web, se simulaba un sitio web para un hospital donde el usuario podía
+                    registrarse, iniciar sesión y registrar sus citas con su fecha correspondiente. El usuario tenía
+                    como responsabilidad pagar antes de la fecha, de lo contrario, se le consideraba una persona morosa
+                    y se bloqueaba su acceso a la página hasta que pagara la cita.</p>
+            </section>
+            <div class="formContainer">
+                <form id="form">
+                    <h1>Contacto</h1>
+
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+
+
+                    <label for="reply_to">Your Email</label>
+                    <input type="email" id="reply_to" name="reply_to" placeholder="Your email" required>
+
+                    <button type="submit" class="submitBtn">Submit</button>
+                </form>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Daniel Segura.</p>
+        </footer>
+        <script src="index.js"></script>
+        <script type="text/javascript">
+
+            document.getElementById('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const message = document.getElementById('message').value;
+                const userEmail = document.getElementById('reply_to').value;
+
+                const templateParams = {
+                    from_name: userEmail,
+                    to_name: "Daniel Segura",
+                    message: message,
+                    reply_to: userEmail
+                };
+
+                emailjs.send('default_service', 'template_szsdk5n', templateParams)
+                    .then(function (response) {
+                        console.log('Email sent successfully', response);
+                        alert('Email sent successfully');
+                    }, function (error) {
+                        console.error('Error sending email:', error);
+                        alert('Failed to send email');
+                    });
+            });
+        </script>
+    </body>
+
+</html>

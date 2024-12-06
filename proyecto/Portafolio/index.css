@@ -1,0 +1,241 @@
+:root {
+    --color-primario: hsl(220, 91%, 61%);
+    --color-complementario: #000000;
+    --color-secundario: #ffffff;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-primario);
+    color: var(--color-complementario);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--color-secundario);
+    height: 70px;
+    color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.Info {
+    flex: 2;
+    text-align: center;
+}
+
+.Slogan {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.contactos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.contactos img {
+    width: 30px;
+    height: 30px;
+}
+
+#linkedin {
+    width: 40px;
+    height: 40px;
+}
+
+#github{
+    width: 70px;
+    height: 40px;
+}
+
+main {
+    padding: 20px;
+}
+
+#portafolio {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#portafolio p {
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+.pdf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.pdf div {
+    text-align: center;
+}
+
+.pdf h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: var(--color-secundario);
+    color: var(--color-complementario);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    box-shadow: 0 4px 10px rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 800px;
+    color: #000000;
+    background-color: var(--color-secundario);
+}
+
+/* Estilos para el formulario */
+.formContainer {
+    box-shadow: 0 4px 10px rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 800px;
+    color: #000000;
+    background-color: var(--color-secundario);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-complementario);
+}
+
+input, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submitBtn {
+    padding: 12px 20px;
+    background-color: var(--color-primario);
+    border: none;
+    border-radius: 4px;
+    color: var(--color-secundario);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+    background-color: hsl(220, 91%, 50%);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+
+    .logo,
+    .Info,
+    .contactos {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .contactos {
+        justify-content: center;
+    }
+
+    #portafolio {
+        padding: 1em;
+    }
+
+    .pdf {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pdf div {
+        width: 100%;
+    }
+
+    .pdf h1 {
+        font-size: 1.2rem;
+    }
+}
+
+.trabajos{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 800px;
+}
+
+.btnMostrar{
+    padding: 12px 20px;
+    background-color: var(--color-primario);
+    border: none;
+    border-radius: 4px;
+    color: var(--color-secundario);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 800px;
+}
+
+
+.btnMostrar:hover{
+    background-color: hsl(220, 91%, 50%);
+}
+
+
+.trabajoPersonales{
+    display: flex;
+    justify-content: center;
+}
