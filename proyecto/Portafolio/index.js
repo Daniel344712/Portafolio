@@ -14,16 +14,5 @@ document.querySelectorAll('dotlottie-player').forEach(player => {
 });
 
 
-function toggleAllSections() {
-  const sections = ['unitySeccion', 'phaserSeccion', 'hospitalSeccion'];
-  const button = document.querySelector('#trabajos-personales button');
 
-  let seccionesOcultas = sections.every(id => document.getElementById(id).style.display === 'none');
-
-  sections.forEach(id => {
-    document.getElementById(id).style.display = seccionesOcultas ? 'block' : 'none';
-  });
-
-  button.textContent = seccionesOcultas ? 'Ocultar Trabajos' : 'Mostrar Trabajos';
-}
 
